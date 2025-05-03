@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destination Types | PackingPal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      scroll-behavior: smooth;
+      height: 100%;
+      background: #f9f9fb; /* Default background */
+      animation: colorChange 10s linear infinite; /* Continuous background change */
+    }
+
+    /* Continuous background color transition */
+    @keyframes colorChange {
+      0% {
+        background-color: #9a7093;
+      }
+      25% {
+        background-color: #aa61b0;
+      }
+      50% {
+        background-color: #a658a1;
+      }
+      75% {
+        background-color: #b558be;
+      }
+      100% {
+        background-color: #d23ec1;
+      }
+    }
+
+    /* Header with separate continuous color change */
+    header {
+      background: transparent;
+      color: #333;
+      padding: 40px 20px 30px;
+      text-align: center;
+      position: relative;
+      animation: headerColorChange 15s linear infinite; /* Separate header color change */
+    }
+
+    @keyframes headerColorChange {
+      0% {
+        background-color: #bf9ac0;
+      }
+      25% {
+        background-color: #f0b9f0;
+      }
+      50% {
+        background-color: #a379a3;
+      }
+      75% {
+        background-color: #b876be;
+      }
+      100% {
+        background-color: #917b92;
+      }
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.5s forwards;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      background: rgb(16, 15, 16);
+      color: rgb(248, 240, 240);
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #f1f1f1;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease 1s forwards;
+    }
+
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      animation: fadeIn 1.5s ease 1.2s forwards;
+    }
+
+    a.card {
+      text-decoration: none;
+      display: block;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transform: translateY(30px);
+      opacity: 0;
+      animation: cardFadeUp 0.8s ease forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: inherit;
+    }
+
+    a.card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      text-align: center;
+      padding: 15px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    /* Animation delays for cards */
+    .card:nth-child(1)  { animation-delay: 0.2s; }
+    .card:nth-child(2)  { animation-delay: 0.3s; }
+    .card:nth-child(3)  { animation-delay: 0.4s; }
+    .card:nth-child(4)  { animation-delay: 0.5s; }
+    .card:nth-child(5)  { animation-delay: 0.6s; }
+    .card:nth-child(6)  { animation-delay: 0.7s; }
+    .card:nth-child(7)  { animation-delay: 0.8s; }
+    .card:nth-child(8)  { animation-delay: 0.9s; }
+    .card:nth-child(9)  { animation-delay: 1.0s; }
+    .card:nth-child(10) { animation-delay: 1.1s; }
+    .card:nth-child(11) { animation-delay: 1.2s; }
+    .card:nth-child(12) { animation-delay: 1.3s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes cardFadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PackingPal</h1>
+    <p>Select your travel vibe!</p>
+    <a href="landingpage.html" class="back-btn">← Back to Home</a>
+  </header>
+
+  <main>
+    <section class="destinations-grid">
+      <a href="c.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzneCsvbBn2j6JfxWuV0EgwKfp1VdNCZX8VQ&s" alt="Cities"><h3>Cities</h3></a>
+      <a href="b.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPttSv0enGja4ipvL3x1PGtPW1oxa-x9MjQQ&s" alt="Beaches"><h3>Beaches</h3></a>
+      <a href="m.html" class="card"><img src="https://cdn.britannica.com/17/83817-050-67C814CD/Mount-Everest.jpg" alt="Mountains"><h3>Mountains</h3></a>
+      <a href="i.html" class="card"><img src="https://t4.ftcdn.net/jpg/06/02/29/53/360_F_602295303_5Lf31RdHgkUxo8avLzLcJBT8Avi8js39.jpg" alt="Islands"><h3>Islands</h3></a>
+      <a href="f.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM-MiaXa1zUWFiGMyFzbkBK9L1-gEapBDTkw&s" alt="Forests"><h3>Forests</h3></a>
+      <a href="hp.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjB-cPlrDBy5mJP2HW0hCmc_dDy5A91jY1A&s" alt="Holy Places"><h3>Holy Places</h3></a>
+      <a href="his.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpKmPFG2ip1OK4Pzi-R9k17xccAibi_fsSg&s" alt="Historical Places"><h3>Historical Places</h3></a>
+      <a href="cosi.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFOvP3_MgfulMQVN5tUdsGeSXN2iR61HWNtw&s" alt="Countrysides"><h3>Countrysides</h3></a>
+      <a href="p.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo_djFQFEp82qAJNo_BYOJDQT98PiTk8eXUg&s" alt="Parks"><h3>Parks</h3></a>
+      <a href="to.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1zMfh9DE87NQorx3q-VKs8lURVX457Y2Gfw&s" alt="Towns and Villages"><h3>Towns & Villages</h3></a>
+      <a href="ad.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgGzk6sAQxjm7NrlkMIpwqZtEkcZPq14-Tv16pB-fPqYOYygdVfUUwNvuKYRJpMiJ1J8&usqp=CAU" alt="Adventures"><h3>Adventures</h3></a>
+      <a href="hs.html" class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_lsOO7E4Qv6nkW_Q6tohzIYOzgkBUO6syQQ&s" alt="Hill Stations"><h3>Hill Stations</h3></a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Islands</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #d288de, #ab46ab);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ffebfb;
+      border-left: 5px solid #ffb6ff;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: #fff;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-5px);
+    }
+
+    .travel-button-wrapper {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .travel-button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .travel-button:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🏝️ Famous Islands</h1>
+
+    <div class="section">
+      <h2>🇮🇳 Islands in India</h2>
+      <div class="grid">
+        <div class="card">Andaman Islands</div>
+        <div class="card">Nicobar Islands</div>
+        <div class="card">Lakshadweep Islands</div>
+        <div class="card">Majuli Island (Assam)</div>
+        <div class="card">Diu Island</div>
+        <div class="card">St. Mary's Island</div>
+        <div class="card">Pamban Island</div>
+        <div class="card">Elephanta Island</div>
+        <div class="card">Rameswaram Island</div>
+        <div class="card">Barren Island (active volcano)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🌍 Famous Islands Worldwide</h2>
+      <div class="grid">
+        <div class="card">Hawaii (USA)</div>
+        <div class="card">Bali (Indonesia)</div>
+        <div class="card">Santorini (Greece)</div>
+        <div class="card">Maldives</div>
+        <div class="card">Bora Bora (French Polynesia)</div>
+        <div class="card">Iceland</div>
+        <div class="card">Greenland</div>
+        <div class="card">Galápagos Islands (Ecuador)</div>
+        <div class="card">Fiji</div>
+        <div class="card">Phuket (Thailand)</div>
+        <div class="card">Corsica (France)</div>
+        <div class="card">Seychelles</div>
+      </div>
+    </div>
+
+    <div class="travel-button-wrapper">
+      <a href="il.html">
+        <button class="travel-button">💡 Travel Tips</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

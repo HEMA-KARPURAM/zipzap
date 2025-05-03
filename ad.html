@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Adventures | PackingPal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      animation: bgCycle 20s infinite alternate;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 60px 20px 80px; /* More padding at bottom for button */
+      position: relative;
+    }
+
+    @keyframes bgCycle {
+      0%   { background: linear-gradient(120deg, #c588d2, #9540af); }
+      25%  { background: linear-gradient(120deg, #80307e, #ba4fc6); }
+      50%  { background: linear-gradient(120deg, #be79d5, #ffd1ff); }
+      75%  { background: linear-gradient(120deg, #7a3674, #853a8c); }
+      100% { background: linear-gradient(120deg, #fbc2eb, #8d3a7e); }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-left: 4px solid #ff6ec4;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .travel-tips-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 25px;
+      background-color: #fff;
+      color: #a18cd1;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .travel-tips-button:hover {
+      background-color: #f3f3f3;
+      color: #8a6fc4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌄 Explore Adventure Spots</h1>
+
+    <h2>🚩 Adventures in India</h2>
+    <div class="grid">
+      <div class="btn">Rishikesh (Rafting)</div>
+      <div class="btn">Manali (Trekking)</div>
+      <div class="btn">Leh-Ladakh (Biking)</div>
+      <div class="btn">Andaman Islands (Scuba)</div>
+      <div class="btn">Meghalaya (Caving)</div>
+      <div class="btn">Spiti Valley (Road Trips)</div>
+      <div class="btn">Goa (Water Sports)</div>
+      <div class="btn">Jim Corbett (Safari)</div>
+      <div class="btn">Coorg (Hiking)</div>
+      <div class="btn">Sikkim (Paragliding)</div>
+      <div class="btn">Auli (Skiing)</div>
+    </div>
+
+    <h2>🌍 Adventures Around the World</h2>
+    <div class="grid">
+      <div class="btn">New Zealand (Bungee Jumping)</div>
+      <div class="btn">Switzerland (Skiing)</div>
+      <div class="btn">Peru (Machu Picchu Trek)</div>
+      <div class="btn">South Africa (Safari)</div>
+      <div class="btn">Nepal (Everest Base Camp)</div>
+      <div class="btn">Iceland (Ice Caves)</div>
+      <div class="btn">Canada (Kayaking)</div>
+      <div class="btn">Australia (Shark Diving)</div>
+      <div class="btn">Norway (Northern Lights Trek)</div>
+      <div class="btn">Chile (Volcano Hiking)</div>
+      <div class="btn">Thailand (Rock Climbing)</div>
+    </div>
+  </div>
+
+  <!-- Fixed bottom center Travel Tips button -->
+  <a href="adl.html">
+    <button class="travel-tips-button">💡 Travel Tips</button>
+  </a>
+
+</body>
+</html>

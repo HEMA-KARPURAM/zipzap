@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Packing List Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 5px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .form-grid > div {
+      margin-bottom: 8px;
+    }
+
+    .form-grid-full {
+      grid-column: 1 / -1;
+    }
+    .tips-wrapper {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .tips-button {
+      padding: 12px 25px;
+      background-color: #fff;
+      color: #a18cd1;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .tips-button:hover {
+      background-color: #f3f3f3;
+      color: #8a6fc4;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="glass">
+      <h1>Packing List Generator With Smart Tips</h1>
+      <p>Smart travel checklist based on your destination</p>
+    </div>
+
+    <div class="glass" id="form-section">
+      <form id="travelForm" class="form-grid">
+        <div>
+          <label>👥 Number of People</label>
+          <input type="number" name="numPeople" min="1" required value="1">
+        </div>
+
+        <div>
+          <label>📅 Duration (days)</label>
+          <input type="number" name="duration" min="1" required value="3">
+        </div>
+
+        <div>
+          <label>🏠 From</label>
+          <input type="text" name="from" required>
+        </div>
+
+        <div>
+          <label>📍 To</label>
+          <input type="text" name="to" required>
+        </div>
+
+        <div>
+          <label>🌍 Type of Place</label>
+          <select name="placeType" required>
+            <option value="">Select Place Type</option>
+            <option value="Himalayas">🏔️ Himalayas</option>
+            <option value="Mountains">⛰️ Mountains</option>
+            <option value="Beach">🏖️ Beach</option>
+            <option value="Park">🌳 Park</option>
+            <option value="Other">🗺️ Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label>🚗 Mode of Travel</label>
+          <select name="modeOfTravel" required>
+            <option value="">Select Mode</option>
+            <option value="Bus">🚌 Bus</option>
+            <option value="Train">🚆 Train</option>
+            <option value="Flight">✈️ Flight</option>
+            <option value="Car">🚗 Car</option>
+            <option value="Bike">🏍️ Bike</option>
+          </select>
+        </div>
+
+        <div class="form-grid-full">
+          <label>☀️ Season</label>
+          <select name="season" required>
+            <option value="">Select Season</option>
+            <option value="Summer">☀️ Summer</option>
+            <option value="Winter">❄️ Winter</option>
+            <option value="Rainy">🌧️ Rainy</option>
+          </select>
+        </div>
+
+        <div class="form-grid-full">
+          <label>📝 Add Custom Items (one per line)</label>
+          <textarea name="customItems" rows="3" placeholder="e.g., camera, snacks, charger..."></textarea>
+        </div>
+
+        <button type="submit">🚀 Generate Packing List</button>
+      </form>
+    </div>
+
+    <div class="glass" id="result-section" style="display:none;"></div>
+  </div>
+  <script>
+    document.getElementById('travelForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const data = Object.fromEntries(form.entries());
+  
+      const baseItems = ['Clothes', 'Toothbrush', 'Toothpaste', 'Shoes', 'Socks', 'Towel'];
+  
+      const weatherItems = {
+        'Winter': ['Warm clothes', 'Gloves', 'Thermal wear'],
+        'Rainy': ['Raincoat', 'Umbrella', 'Waterproof bags'],
+        'Summer': ['Sunscreen', 'Hat', 'Sunglasses']
+      };
+  
+      const destinationItems = {
+        'Beach': ['Swimwear', 'Slippers', 'Beach towel'],
+        'Mountains': ['Hiking boots', 'Water bottle', 'Energy bars'],
+        'Himalayas': ['Jacket', 'Hiking boots', 'Altitude sickness medicine'],
+        'Park': ['Picnic mat', 'Insect repellent', 'Binoculars']
+      };
+  
+      const travelModeItems = {
+        'Flight': ['Travel pillow', 'Neck rest', 'ID proof'],
+        'Bus': ['Snacks', 'Earphones', 'Water bottle'],
+        'Train': ['Blanket', 'Reading book', 'Headphones'],
+        'Car': ['Snacks', 'Music playlist', 'Navigation tools'],
+        'Bike': ['Helmet', 'Riding gloves', 'Tool kit']
+      };
+  
+      const longTripExtras = data.duration > 5 ? ['Extra clothes', 'Laundry detergent'] : [];
+      const customItems = data.customItems.split('\n').filter(i => i.trim());
+  
+      const allItems = [
+        ...baseItems,
+        ...(weatherItems[data.season] || []),
+        ...(destinationItems[data.placeType] || []),
+        ...(travelModeItems[data.modeOfTravel] || []),
+        ...longTripExtras
+      ];
+  
+      const uniqueItems = [...new Set(allItems)];
+  
+      const customItemsHTML = customItems.length
+        ? `<h3>✍️ Your Custom Items</h3><ul>${customItems.map(item => `<li>${item}</li>`).join('')}</ul>`
+        : '';
+  
+      const resultHTML = `
+        <h2>Trip Summary</h2>
+        <p><strong>${data.numPeople}</strong> ${data.numPeople == 1 ? 'person is' : 'people are'} going on a <strong>${data.duration}-day</strong> trip from <strong>${data.from}</strong> to <strong>${data.to}</strong> via <strong>${data.modeOfTravel}</strong>, visiting a <strong>${data.placeType}</strong> during <strong>${data.season}</strong>.</p>
+  
+        <h3>🧳 Suggested Items</h3>
+        <ul>${uniqueItems.map(item => `<li>${item}</li>`).join('')}</ul>
+  
+        ${customItemsHTML}
+        <button onclick="window.location.reload()">🔄 Plan Another Trip</button>
+      `;
+  
+      document.getElementById('form-section').style.display = 'none';
+      document.getElementById('result-section').innerHTML = resultHTML;
+      document.getElementById('result-section').style.display = 'block';
+    });
+  </script>
+  
+  
+</body>
+</html>

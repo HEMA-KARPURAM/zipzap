@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Beaches</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 40px;
+      position: relative;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 18px;
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background-color: #fff;
+      color: #a18cd1;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ffebfb;
+      border-left: 5px solid #ffb6ff;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: #fff;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-5px);
+    }
+
+    .tips-wrapper {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .tips-button {
+      padding: 12px 25px;
+      background-color: #fff;
+      color: #a18cd1;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .tips-button:hover {
+      background-color: #f3f3f3;
+      color: #8a6fc4;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌊 Famous Beaches</h1>
+
+    <div class="section">
+      <h2>🇮🇳 Beaches in India</h2>
+      <div class="grid">
+        <div class="card">Goa</div>
+        <div class="card">Marina Beach, Chennai</div>
+        <div class="card">Varkala Beach, Kerala</div>
+        <div class="card">Radhanagar Beach, Andaman</div>
+        <div class="card">Om Beach, Gokarna</div>
+        <div class="card">Puri Beach, Odisha</div>
+        <div class="card">Kovalam Beach, Kerala</div>
+        <div class="card">Baga Beach, Goa</div>
+        <div class="card">Juhu Beach, Mumbai</div>
+        <div class="card">Alappuzha Beach, Kerala</div>
+        <div class="card">Colva Beach, Goa</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🌍 Famous Beaches Worldwide</h2>
+      <div class="grid">
+        <div class="card">Bondi Beach, Australia</div>
+        <div class="card">Copacabana Beach, Brazil</div>
+        <div class="card">Waikiki Beach, Hawaii</div>
+        <div class="card">Whitehaven Beach, Australia</div>
+        <div class="card">Navagio Beach, Greece</div>
+        <div class="card">Railay Beach, Thailand</div>
+        <div class="card">Bora Bora, French Polynesia</div>
+        <div class="card">Seven Mile Beach, Jamaica</div>
+        <div class="card">Grace Bay, Turks and Caicos</div>
+        <div class="card">Pink Sands Beach, Bahamas</div>
+        <div class="card">Maya Bay, Thailand</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tips-wrapper">
+    <a href="bl.html">
+      <button class="tips-button">💡 Travel Tips</button>
+    </a>
+  </div>
+</body>
+</html>

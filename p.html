@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Parks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #a18cd1, #fbc2eb, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 20px 100px; /* space for top back button and bottom tips */
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      background: rgba(128, 0, 128, 0.6);
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: rgba(128, 0, 128, 0.85);
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ffe7ff;
+      border-left: 5px solid #d4a5f9;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(128, 0, 128, 0.2);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: #fff;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background: rgba(186, 85, 211, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(186, 85, 211, 0.5);
+    }
+
+    .tips-button {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #8a2be2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .tips-button:hover {
+      background: #6a1cb8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .section h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="container">
+    <h1>🌳 Famous Parks</h1>
+
+    <div class="section">
+      <h2>🇮🇳 Parks in India</h2>
+      <div class="grid">
+        <div class="card">Lodhi Garden, Delhi</div>
+        <div class="card">Cubbon Park, Bengaluru</div>
+        <div class="card">Hanging Gardens, Mumbai</div>
+        <div class="card">Rock Garden, Chandigarh</div>
+        <div class="card">Semmozhi Poonga, Chennai</div>
+        <div class="card">Ooty Botanical Garden</div>
+        <div class="card">Brindavan Gardens, Mysore</div>
+        <div class="card">Indira Gandhi Park, Bhubaneswar</div>
+        <div class="card">Sanjay Gandhi National Park, Mumbai</div>
+        <div class="card">Eco Park, Kolkata</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🌍 Famous Parks Worldwide</h2>
+      <div class="grid">
+        <div class="card">Central Park, New York</div>
+        <div class="card">Hyde Park, London</div>
+        <div class="card">Ueno Park, Tokyo</div>
+        <div class="card">Luxembourg Gardens, Paris</div>
+        <div class="card">Stanley Park, Vancouver</div>
+        <div class="card">Tiergarten, Berlin</div>
+        <div class="card">Golden Gate Park, San Francisco</div>
+        <div class="card">Ibirapuera Park, São Paulo</div>
+        <div class="card">Keukenhof Gardens, Netherlands</div>
+        <div class="card">Park Güell, Barcelona</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="pl.html">
+    <button class="tips-button">💡 Travel Tips</button>
+  </a>
+
+</body>
+</html>

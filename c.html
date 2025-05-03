@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Cities</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px; /* space for bottom button */
+      position: relative;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 18px;
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background-color: #fff;
+      color: #a18cd1;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    .category {
+      margin-bottom: 30px;
+    }
+
+    .category h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #ffebfb;
+      border-left: 5px solid #ffb6ff;
+      padding-left: 10px;
+    }
+
+    .city-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .city {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 1rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .city:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-5px);
+    }
+
+    .tips-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .tips-button:hover {
+      background-color: #fff;
+      color: #a18cd1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌍 Explore Famous Cities</h1>
+
+    <div class="category">
+      <h2>🇮🇳 Cities in India</h2>
+      <div class="city-list">
+        <div class="city">Delhi</div>
+        <div class="city">Mumbai</div>
+        <div class="city">Bangalore</div>
+        <div class="city">Hyderabad</div>
+        <div class="city">Chennai</div>
+        <div class="city">Kolkata</div>
+        <div class="city">Jaipur</div>
+        <div class="city">Ahmedabad</div>
+        <div class="city">Pune</div>
+        <div class="city">Lucknow</div>
+        <div class="city">Bhopal</div>
+        <div class="city">Varanasi</div>
+        <div class="city">Amritsar</div>
+        <div class="city">Mysore</div>
+        <div class="city">Udaipur</div>
+        <div class="city">Shimla</div>
+        <div class="city">Goa</div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>🌐 Cities Around the World</h2>
+      <div class="city-list">
+        <div class="city">New York</div>
+        <div class="city">London</div>
+        <div class="city">Paris</div>
+        <div class="city">Tokyo</div>
+        <div class="city">Dubai</div>
+        <div class="city">Singapore</div>
+        <div class="city">Sydney</div>
+        <div class="city">Rome</div>
+        <div class="city">Barcelona</div>
+        <div class="city">Berlin</div>
+        <div class="city">Toronto</div>
+        <div class="city">Los Angeles</div>
+        <div class="city">Istanbul</div>
+        <div class="city">Bangkok</div>
+        <div class="city">Hong Kong</div>
+        <div class="city">Cape Town</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="cl.html">
+    <button class="tips-button">💡 Travel Tips</button>
+  </a>
+</body>
+</html>

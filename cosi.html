@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Countryside Places</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a660a3, #9b55a3);
+      min-height: 100vh;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      backdrop-filter: blur(14px);
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      color: #2c3e50;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #2d3436;
+      border-left: 5px solid #7f3077;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: #2c3e50;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background: rgba(173, 216, 230, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(173, 216, 230, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    .tips-button {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      padding: 10px;
+      font-size: 1.2rem;
+      background-color: #3b82f6;
+      color: white;
+      text-align: center;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .tips-button:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌾 Famous Countryside Places</h1>
+
+    <div class="section">
+      <h2>🇮🇳 Countryside Destinations in India</h2>
+      <div class="grid">
+        <div class="card">Coorg, Karnataka</div>
+        <div class="card">Munnar, Kerala</div>
+        <div class="card">Kumaon Region, Uttarakhand</div>
+        <div class="card">Wayanad, Kerala</div>
+        <div class="card">Tawang, Arunachal Pradesh</div>
+        <div class="card">Ziro Valley, Arunachal Pradesh</div>
+        <div class="card">Spiti Valley, Himachal Pradesh</div>
+        <div class="card">Chopta, Uttarakhand</div>
+        <div class="card">Chettinad, Tamil Nadu</div>
+        <div class="card">Khajjiar, Himachal Pradesh</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🌍 Countryside Destinations Worldwide</h2>
+      <div class="grid">
+        <div class="card">Cotswolds, England</div>
+        <div class="card">Tuscany, Italy</div>
+        <div class="card">Provence, France</div>
+        <div class="card">Kyoto Countryside, Japan</div>
+        <div class="card">Bavarian Alps, Germany</div>
+        <div class="card">Lake District, UK</div>
+        <div class="card">Hallstatt, Austria</div>
+        <div class="card">Blue Ridge Mountains, USA</div>
+        <div class="card">Barossa Valley, Australia</div>
+        <div class="card">Bohemian Switzerland, Czech Republic</div>
+      </div>
+    </div>
+
+    <!-- Button for Travel Tips -->
+    <a href="csl.html">
+      <button class="tips-button">💡 Travel Tips</button>
+    </a>
+  </div>
+</body>
+</html>
